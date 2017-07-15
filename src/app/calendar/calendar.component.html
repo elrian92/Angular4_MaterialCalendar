@@ -1,0 +1,38 @@
+<md-card class="top-card">
+<div class="content">
+  <div class="top">
+    <div class="nav_calendar">
+      <button md-icon-button class="left" (click)="onPrevMonth()">
+        <md-icon>chevron_left</md-icon>
+      </button>
+      <div class="title">
+        <div [@calendarAnimation]="animate">{{ displayMonth.full }} {{ displayYear }}</div>
+      </div>
+      <button md-icon-button class="right" (click)="onNextMonth()">
+        <md-icon>chevron_right</md-icon>
+      </button>
+    </div>
+    <div class="labels">
+        <div class="label" *ngFor="let day of dayNames">
+            {{ day.short }}
+        </div>
+    </div>
+  </div>
+  <div [@calendarAnimation]="animate" class="month">
+    <div *ngFor="let day of displayDaysObj" class="day">
+      <div *ngIf="day.day != 0" (click)="handleClick(day)"  [ngClass]="( day.day.getTime() === this.currentDaySelector.getTime())? 'today' : ''">
+        <div id="center" [ngClass]="(day.festivi == true)? 'festivi' : ''">
+          {{ day.day.getDate() }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</md-card>
+<md-card>
+  <md-card-content>
+    <div class="legenda">
+      Pasto in bianco:  <div class="dot white"></div>&nbsp;&nbsp;&nbsp; Giorno assenza:  <div class="dot absent">  </div>
+    </div>
+  </md-card-content>
+</md-card>

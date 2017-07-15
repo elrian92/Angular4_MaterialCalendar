@@ -1,0 +1,17 @@
+<header role="banner">
+  <button routerLink="/home" md-button class="btn btn--clear">
+    <md-icon>menu</md-icon>
+  </button>
+
+  <!-- <div class="desktop-only">
+    <a routerLink="/home" [attr.tabindex]="navOpen ? -1 : 0" class="logo">CALENDAR</a>
+    <a routerLink="" class="logout"><span class="btn--clear desktop-only">Logout</span><md-icon>exit_to_app</md-icon></a>
+  </div> -->
+
+  <!-- <div class="mobile-only"> -->
+  <div>
+    <button md-button class="today" (click)="todayClick()">
+      <md-icon>today</md-icon>
+    </button>
+  </div>
+</header>

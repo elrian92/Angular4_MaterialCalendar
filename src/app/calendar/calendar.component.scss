@@ -1,0 +1,224 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.top-card {
+    margin-top: 2%;
+}
+
+@mixin calendar-theme($theme) {
+  $primary: map-get($theme, primary);
+
+    .header {
+      z-index: 0;
+        padding: 16px;
+        background-color:md-color($primary);
+    }
+    .footer [md-button] {
+        color: md-color($primary);
+    }
+    .day-background-normal {
+        background-color: transparent;
+    }
+    .day-background-selected {
+        background-color: md-color($primary);
+    }
+    .day-foreground-normal {
+
+        color: rgba(0, 0, 0, .87);
+    }
+    .day-foreground-selected {
+        color: rgba(255, 255, 255, .87);
+    }
+    .day-foreground-today {
+        background-color: red;
+    }
+}
+
+.today {
+  color: red;
+  font-size: 14;
+  font-weight: bold;
+}
+
+.header, .nav, .content, .footer {
+    font-family: Roboto, "Segoe UI", "Helvetica Neue",sans-serif;
+}
+.header {
+    padding: 16px;
+}
+.header .year {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.header .date {
+    color: rgba(255, 255, 255, 255);
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.nav_calendar {
+    width: 100%;
+    padding-top:20px;
+    padding-bottom:8px;
+    min-height: 40px;
+    overflow: hidden;
+    position: relative;
+    z-index:0;
+}
+.nav_calendar .left {
+    position: absolute;
+    left: 8px;
+    z-index: 100;
+}
+.nav_calendar .right  {
+    position: absolute;
+    right: 8px;
+    z-index: 100;
+}
+.nav_calendar .title {
+    position: absolute;
+    margin-left: 0;
+    margin-right: 0;
+    left: 0px;
+    right: 0px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    overflow: hidden;
+    z-index: 10;
+}
+
+@media screen and (min-width: 0px) and (max-width: 3600px) {
+  .content {
+    font-size: 13px;
+    padding-left: 8px;
+    padding-right: 8px;
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+  }
+  .content .month {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-flow: wrap;
+          flex-flow: wrap;
+          width: 100%;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+  }
+
+  .content .label {
+      display: inline-block;
+      width: 12%;
+      height: 2.2em;
+      margin: 0 0.2em;
+      line-height: 2.2em;
+      text-align: center;
+      color: #EF5350;
+      font-weight: bold;
+  }
+  .content .day {
+      display: inline-block;
+      width: 12%;
+      margin: 0 0.2em;
+      line-height: 4em;
+      text-align: center;
+      -webkit-transition: 0.37s;
+      transition: 0.37s;
+      cursor: pointer;
+      font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 1099px) {
+  .content {
+    font-size: 13px;
+    padding-left: 8px;
+    padding-right: 8px;
+    max-width:  80%;
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+  }
+
+  .content .month {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-flow: wrap;
+          flex-flow: wrap;
+          width: 100%;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+  }
+  .content .label {
+      display: inline-block;
+      width: 13.7%;
+      height: 2.2em;
+      margin: 0 0.2em;
+      line-height: 2.2em;
+      text-align: center;
+      font-weight: bold;
+      color: #EF5350;
+  }
+  .content .day {
+      display: inline-block;
+      width: 13.7%;
+      margin: 0 0.2em 0.4em;
+      line-height: 4em;
+      text-align: center;
+      -webkit-transition: 0.37s;
+      transition: 0.37s;
+      cursor: pointer;
+      font-weight: bold;
+  }
+
+}
+
+.content .labels {
+  display: block;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.top {
+  border-bottom-width: thin;
+  border-bottom: 1px solid #d6d6d6;
+}
+
+#center {
+  text-align: -webkit-center;
+}
+
+#dot {
+  width: 30px;
+  border-radius: 50%;
+  line-height: 30px;
+  margin-bottom: 2px;
+  margin-top: 12px;
+  display: inline-block;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin-top: 0px;
+  display: inline-flex;
+  border-radius: 50%;
+  line-height: 10px;
+  margin-bottom: 2px;
+  margin-top: 12px;
+}
+
+.festivi {
+  color: rgba(0, 0, 0, 0.4);
+}
